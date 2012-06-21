@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="title_height">45dip</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <!-- <dimen name="text_size_large">22sp</dimen> -->
+    <!-- <dimen name="normal_height">110px</dimen> -->
+    <dimen name="normal_height">64dip</dimen>
+    <!-- <dimen name="expanded_height">165px</dimen> -->
+    <dimen name="expanded_height">128dip</dimen>
+
+</resources>

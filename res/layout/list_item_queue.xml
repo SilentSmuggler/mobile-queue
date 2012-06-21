@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom"
+    android:paddingBottom="2dip"
+    android:paddingLeft="5dip"
+    android:paddingRight="5dip"
+    android:paddingTop="2dip" >
+
+    <ImageView
+        android:id="@+id/Grabber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/grabber"
+        android:paddingRight="8dip"
+        android:src="@drawable/ic_mp_move" />
+
+    <ImageView
+        android:id="@+id/BoxArtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/Grabber"
+        android:contentDescription="@string/box_art_view"
+        android:paddingRight="8dip" />
+
+    <TextView
+        android:id="@+id/PositionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/BoxArtView"
+        android:maxLines="1"
+        android:paddingRight="8dip"
+        android:textColor="#C0C0C0"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TitleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/PositionView"
+        android:fitsSystemWindows="true"
+        android:paddingRight="10dip"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/YearView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/TitleView"
+        android:fitsSystemWindows="true"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/GenreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TitleView"
+        android:layout_toRightOf="@id/BoxArtView"
+        android:maxLines="1"
+        android:textSize="11dip" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/GenreView"
+        android:layout_toRightOf="@id/BoxArtView" >
+
+        <ImageView
+            android:id="@+id/RatingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/rating_view"
+            android:paddingRight="13dip" />
+
+        <ImageView
+            android:id="@+id/FormatView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/format_view"
+            android:paddingRight="13dip" />
+
+        <RatingBar
+            android:id="@+id/RatingBarView"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LinearLayout01"
+        android:layout_toRightOf="@id/BoxArtView"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/AvailabilityView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingTop="1dip"
+            android:textSize="8dip" />
+
+        <TextView
+            android:id="@+id/RentalStateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingTop="1dip"
+            android:textSize="8dip" />
+    </LinearLayout>
+
+</RelativeLayout>

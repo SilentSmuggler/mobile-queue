@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/browse_context_menu_display_title"
+        android:title="@string/browse_context_menu_display"/>
+    <item
+        android:id="@+id/browse_context_menu_similar"
+        android:title="@string/browse_context_menu_similar"/>
+    <item
+        android:id="@+id/browse_context_menu_queue_add_top"
+        android:title="@string/browse_context_menu_add_disc_top"/>
+    <item
+        android:id="@+id/browse_context_menu_queue_add_bottom"
+        android:title="@string/browse_context_menu_add_disc_bottom"/>
+    <item
+        android:id="@+id/browse_context_menu_instant_add_top"
+        android:title="@string/browse_context_menu_add_instant_top"/>
+    <item
+        android:id="@+id/browse_context_menu_instant_add_bottom"
+        android:title="@string/browse_context_menu_add_instant_bottom"/>
+
+</menu>

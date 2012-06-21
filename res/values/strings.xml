@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Mobile Queue Items -->
+    <string name="app_name">Mobile Queue</string>
+    <string name="description_logo">Mobile Queue</string>
+    <string name="description_home">Home</string>
+    <string name="description_add">Add</string>
+    <string name="description_search">Search</string>
+    <string name="description_refresh">Refresh</string>
+    <string name="title_register">Register</string>
+    <string name="title_browse">Browse</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_add">Add Title</string>
+    <string name="title_preferences">Preferences</string>
+    <string name="title_details">Movie Details</string>
+    <string name="title_search">Search</string>
+    <string name="title_search_query">Search for \'<xliff:g id="query">%1$s</xliff:g>\'</string>
+    <string name="search_hint">Search Netflix</string>
+
+    <!-- Home Screen Buttons -->
+    <string name="btn_discqueue">DVD Queue</string>
+    <string name="btn_instantqueue">Instant Queue</string>
+    <string name="btn_suggest">Suggestions</string>
+    <string name="btn_athome">Home</string>
+    <string name="btn_history">History</string>
+    <string name="preferences">Preferences</string>
+    <string name="netflix_branding"><a href="http://www.netflix.com">delivered by Netflix</a></string>
+    <string name="queue_prompt">Choose a queue</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="genre">Genre</string>
+    <string name="similar">Similar</string>
+
+    <!-- URLs -->
+    <string name="user_api_URL">http://api.netflix.com/users/</string>
+    <string name="catalog_titles_api_URL">http://api.netflix.com/catalog/titles</string>
+    <string name="disc_queueURL">/queues/disc</string>
+    <string name="instant_queueURL">/queues/instant</string>
+    <string name="recommendations_URL">/recommendations</string>
+    <string name="athome_URL">/at_home</string>
+    <string name="history_URL">/rental_history</string>
+    <string name="rating_title_URL">/ratings/title</string>
+    <string name="actual_rating_URL">/ratings/title/actual</string>
+
+    <!-- Queue Menu -->
+    <string name="queue_menu_label">Queue Menu</string>
+    <string name="queue_menu_display_profile">Display Profile</string>
+
+    <!-- Queue Item Menu -->
+    <string name="context_menu_label">Queue Item Menu</string>
+    <string name="queue_context_menu_top">Move to Top of Queue</string>
+    <string name="queue_context_menu_display">Display Title Details</string>
+    <string name="queue_context_menu_similar">Display Similar Titles</string>
+    <string name="queue_context_menu_delete">Remove Item from Queue</string>
+    <string name="browse_context_menu_display">Display Title Details</string>
+    <string name="browse_context_menu_similar">Display Similar Titles</string>
+    <string name="browse_context_menu_add_disc_top">Add to Top of Disc Q</string>
+    <string name="browse_context_menu_add_instant_top">Add to Top of Instant Q</string>
+    <string name="browse_context_menu_add_disc_bottom">Add to Bottom of Disc Q</string>
+    <string name="browse_context_menu_add_instant_bottom">Add to Bottom of Instant Q</string>
+
+    <!-- Title Display Menu -->
+    <string name="title_menu_label">Title Menu</string>
+    <string name="title_menu_add_title">Add Title</string>
+    <string name="title_menu_rate_title">Rate Title</string>
+
+    <!-- Constants -->
+    <string name="no_items_retrieved">No items retrieved from Netflix</string>
+    <string name="no_movies_found">No Movies Found</string>
+    <string name="average_rating">Average Rating:</string>
+    <string name="mpaa_rating">MPAA Rating:</string>
+    <string name="tv_rating">TV Rating:</string>
+    <string name="availability">Availability:</string>
+    <string name="formats">Formats:</string>
+    <string name="select_queue">Please select a queue:</string>
+    <string name="select_format">Please select a format:</string>
+    <string name="position">Position:</string>
+    <string name="leave_blank">Leave Blank for Bottom</string>
+    <string name="add_title_queue">Add Title to Queue</string>
+    <string name="full_name">Full Name: </string>
+    <string name="nickname">Nickname: </string>
+    <string name="instant_watch">Can Instant Watch: </string>
+
+    <!-- ImageView Content Description -->
+    <string name="title_bar_separator">TitleBar Separator</string>
+    <string name="rating_view_detail">Rating View Detail</string>
+    <string name="dvd_view">Dvd View</string>
+    <string name="bluray_view">Blu-Ray View</string>
+    <string name="instant_view">Instant View</string>
+    <string name="box_art_view">Box Art View</string>
+    <string name="box_art_view_detail">Box Art View Detail</string>
+    <string name="rating_view">Rating View</string>
+    <string name="format_view">Format View</string>
+    <string name="grabber">Grabber</string>
+
+</resources>

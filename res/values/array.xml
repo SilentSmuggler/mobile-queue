@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="BoxArtSize">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+    <string-array name="QueueRemove">
+        <item>None</item>
+        <item>Slide</item>
+        <item>Fling</item>
+    </string-array>
+    <string-array name="discFormats">
+        <item>Netflix.com subscriber\'s format</item>
+        <item>DVD</item>
+        <item>Blu-ray</item>
+        <item>Ask Every Time </item>
+    </string-array>
+    <string-array name="discFormatsValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="both_queues">
+        <item>Disc</item>
+        <item>Instant</item>
+    </string-array>
+    <string-array name="disc_queues">
+        <item>Disc</item>
+    </string-array>
+    <string-array name="instant_queues">
+        <item>Instant</item>
+    </string-array>
+    <string-array name="both_formats">
+        <item>DVD</item>
+        <item>Blu-ray</item>
+    </string-array>
+    <!--
+         <string-array name="dvd_format">
+        <item>DVD</item>
+    </string-array>
+    <string-array name="blu_format">
+        <item>Blu-ray</item>
+    </string-array>
+    -->
+
+</resources>

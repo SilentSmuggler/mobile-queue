@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--
+         <item android:id="@+id/queue_menu_at_home"
+		  android:title="@string/queue_menu_at_home"
+		  android:icon="@drawable/ic_menu_home"/>
+    -->
+
+
+    <!--
+         <item android:id="@+id/queue_menu_history"
+		  android:title="@string/queue_menu_history"
+		  android:icon="@drawable/ic_menu_send"/>
+    -->
+
+
+    <!--
+         <item android:id="@+id/queue_menu_search"
+		  android:title="@string/search_hint" 
+		  android:icon="@drawable/ic_menu_search"/>
+    -->
+
+    <item
+        android:id="@+id/queue_menu_display_profile"
+        android:icon="@drawable/ic_menu_info_details"
+        android:title="@string/queue_menu_display_profile"/>
+
+    <!--
+         <item android:id="@+id/queue_menu_queue_refresh"
+		  android:title="@string/queue_menu_queue_refresh" 
+	      android:icon="@drawable/ic_menu_refresh"/>
+    -->
+
+    <item
+        android:id="@+id/queue_menu_prefrences"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/preferences"/>
+
+</menu>

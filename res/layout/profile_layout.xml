@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10sp" >
+
+    <LinearLayout
+        android:id="@+id/fullname_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15sp"
+            android:text="@string/full_name" />
+
+        <TextView
+            android:id="@+id/full_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nickname_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullname_linearlayout"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15sp"
+            android:text="@string/nickname" />
+
+        <TextView
+            android:id="@+id/nickname_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nickname_linearlayout"
+        android:orientation="horizontal"
+        android:paddingTop="5dp" >
+
+        <ImageView
+            android:id="@+id/DvdView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/dvd_view"
+            android:paddingRight="13dp"
+            android:src="@drawable/ic_dvd"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/BluRayView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/bluray_view"
+            android:paddingRight="13dp"
+            android:src="@drawable/ic_blu_ray"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/InstantView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/instant_view"
+            android:paddingRight="13dp"
+            android:src="@drawable/ic_instant"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/instantwatch_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LinearLayout03"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15sp"
+            android:text="@string/instant_watch" />
+
+        <CheckBox
+            android:id="@+id/can_watch_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/branding_linearlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instantwatch_linearlayout"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal" >
+
+        <include
+            android:id="@+id/include02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            layout="@layout/branding" />
+    </LinearLayout>
+
+</RelativeLayout>

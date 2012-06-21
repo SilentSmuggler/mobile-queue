@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Queue Options" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="refreshPref"
+            android:summary="Auto-Refresh List"
+            android:title="Auto Refresh" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/discFormats"
+            android:entryValues="@array/discFormatsValues"
+            android:key="movieFPref"
+            android:summary="Movie Disc Format to use when adding new disc."
+            android:title="Movie Disc Format" />
+        <ListPreference
+            android:defaultValue="None"
+            android:entries="@array/QueueRemove"
+            android:entryValues="@array/QueueRemove"
+            android:key="removeTPref"
+            android:summary="Remove Title with L To R Gestures - Requires App restart"
+            android:title="Remove Titles" />
+        <ListPreference
+            android:defaultValue="Medium"
+            android:entries="@array/BoxArtSize"
+            android:entryValues="@array/BoxArtSize"
+            android:key="boxArtPref"
+            android:summary="Size of Box Art in List"
+            android:title="Box Art Size" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

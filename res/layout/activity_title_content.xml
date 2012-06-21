@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/moviedetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="15dp"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/synopsisScroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp" >
+
+        <TextView
+            android:id="@+id/SynopsisViewDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/genreScroller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp" >
+
+        <TextView
+            android:id="@+id/GenreViewDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="225dp"
+            android:textSize="11dp" />
+    </ScrollView>
+
+</FrameLayout>

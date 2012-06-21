@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/TitleBar" >
+
+        <ImageButton
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_title_home" />
+
+        <ImageView
+            style="@style/TitleBarSeparator"
+            android:contentDescription="@string/title_bar_separator" />
+
+        <TextView style="@style/TitleBarText" />
+
+        <ImageView
+            android:id="@+id/addImageView"
+            style="@style/TitleBarSeparator"
+            android:contentDescription="@string/title_bar_separator" />
+
+        <ImageButton
+            android:id="@+id/addImageButton"
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_add"
+            android:onClick="onAddClick"
+            android:src="@drawable/ic_title_add" />
+
+        <ImageView
+            style="@style/TitleBarSeparator"
+            android:contentDescription="@string/title_bar_separator" />
+
+        <ImageButton
+            style="@style/TitleBarAction"
+            android:contentDescription="@string/description_search"
+            android:onClick="onSearchClick"
+            android:src="@drawable/ic_title_search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/TitleViewDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/YearViewDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/AverageRatingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="8dp"
+                    android:text="@string/average_rating" />
+
+                <RatingBar
+                    android:id="@+id/RatingBarViewDetail"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/MpaaText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="8dp"
+                    android:text="@string/mpaa_rating" />
+
+                <TextView
+                    android:id="@+id/TvText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="8dp"
+                    android:text="@string/tv_rating" />
+
+                <ImageView
+                    android:id="@+id/RatingViewDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/rating_view_detail" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/AvailabilityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="8dp"
+                    android:text="@string/availability" />
+
+                <TextView
+                    android:id="@+id/AvailabilityViewDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/FormatText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="8dp"
+                    android:text="@string/formats" />
+
+                <ImageView
+                    android:id="@+id/DvdView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/dvd_view"
+                    android:paddingRight="13dp"
+                    android:src="@drawable/ic_dvd"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/BluRayView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bluray_view"
+                    android:paddingRight="13dp"
+                    android:src="@drawable/ic_blu_ray"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/InstantView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/instant_view"
+                    android:paddingRight="13dp"
+                    android:src="@drawable/ic_instant"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/BoxArtViewDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/box_art_view_detail"
+                android:minHeight="150dp"
+                android:minWidth="110dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginRight="-2dp"
+                android:background="@null" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" >
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="-15dip"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/IncludeTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/branding" />
+    </LinearLayout>
+
+</LinearLayout>

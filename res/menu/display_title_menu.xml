@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/display_menu_add"
+        android:icon="@drawable/ic_menu_add"
+        android:title="@string/title_menu_add_title"/>
+    <item
+        android:id="@+id/display_menu_rate"
+        android:icon="@drawable/ic_menu_agenda"
+        android:title="@string/title_menu_rate_title"/>
+
+</menu>
