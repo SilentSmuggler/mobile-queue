@@ -11,7 +11,6 @@ import android.view.KeyEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.silentlabs.android.mobilequeue.R;
@@ -54,14 +53,14 @@ public class RegisterAppActivity extends Activity {
         setContentView(R.layout.activity_register);
         mWebView = (WebView) findViewById(R.id.webview);
 
-        ((TextView) findViewById(R.id.title_text)).setText(R.string.app_name);
+        // ((TextView) findViewById(R.id.title_text)).setText(R.string.app_name);
 
         mOAuthservice = new ServiceBuilder()
-                .provider(NetflixApi.class)
-                .apiKey(NetflixAccess.getConsumerKey())
-                .apiSecret(NetflixAccess.getConsumerSecret())
-                .callback(callbackUrl)
-                .build();
+        .provider(NetflixApi.class)
+        .apiKey(NetflixAccess.getConsumerKey())
+        .apiSecret(NetflixAccess.getConsumerSecret())
+        .callback(callbackUrl)
+        .build();
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setSavePassword(false);
@@ -79,9 +78,9 @@ public class RegisterAppActivity extends Activity {
                 Uri uri = Uri.parse(url);
                 if (uri != null && uri.toString().startsWith(callbackUrl.substring(0, 4))) {
                     String verifier = uri.getQueryParameter("oauth_verifier"); // OAuth
-                                                                               // 1.0a
+                    // 1.0a
                     String token = uri.getQueryParameter("oauth_token"); // OAuth
-                                                                         // 1.0
+                    // 1.0
                     if (verifier != null) {
                         getOAuthAccess(verifier);
 

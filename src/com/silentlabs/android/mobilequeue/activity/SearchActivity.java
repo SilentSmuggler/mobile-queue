@@ -150,7 +150,7 @@ public class SearchActivity extends ListActivity implements OnScrollListener {
         final CharSequence title = getString(R.string.title_search_query, query);
 
         setTitle(title);
-        ((TextView) findViewById(R.id.title_text)).setText(title);
+        // ((TextView) findViewById(R.id.title_text)).setText(title);
 
         searchNetflix(query.replace(" ", "%20").replace("&", "%26"));
     }

@@ -106,10 +106,10 @@ public class BrowseActivity extends ListActivity implements OnScrollListener {
             TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
             brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
 
-            if (term.equals(getString(R.string.disc_queueURL)))
-                ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_discqueue);
-            else if (term.equals(getString(R.string.instant_queueURL)))
-                ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_instantqueue);
+            // if (term.equals(getString(R.string.disc_queueURL)))
+            //     ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_discqueue);
+            // else if (term.equals(getString(R.string.instant_queueURL)))
+            //     ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_instantqueue);
 
             mList = getListView();
             this.browseAdapter = new BrowseAdapter(this, R.layout.list_item_queue, this.listItem,
@@ -125,19 +125,19 @@ public class BrowseActivity extends ListActivity implements OnScrollListener {
                 setContentView(R.layout.activity_browse);
                 TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
                 brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
-                ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_suggest);
+                // ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_suggest);
 
             } else if (type.equals("ATHOME")) {
                 setContentView(R.layout.activity_browse);
                 TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
                 brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
-                ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_athome);
+                // ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_athome);
 
             } else if (type.equals("HISTORY")) {
                 setContentView(R.layout.activity_browse);
                 TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
                 brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
-                ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_history);
+                // ((TextView) findViewById(R.id.title_text)).setText(R.string.btn_history);
 
             } else if (type.equals("SIMILAR")) {
                 setContentView(R.layout.activity_browse_content);

@@ -125,7 +125,7 @@ public class DisplayMovieDetailsActivity extends TabActivity {
         ImageView bluray = (ImageView) findViewById(R.id.BluRayView);
         ImageView instant = (ImageView) findViewById(R.id.InstantView);
 
-        ((TextView) findViewById(R.id.title_text)).setText(movieTitle.getTitleReqular());
+        // ((TextView) findViewById(R.id.title_text)).setText(movieTitle.getTitleReqular());
 
         title.setText(movieTitle.getTitleReqular());
         year.setText("(" + movieTitle.getReleaseYear() + ")");

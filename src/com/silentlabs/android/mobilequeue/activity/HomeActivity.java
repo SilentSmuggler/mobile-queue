@@ -1,20 +1,19 @@
 
 package com.silentlabs.android.mobilequeue.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.silentlabs.android.mobilequeue.R;
 import com.silentlabs.android.mobilequeue.util.UIUtils;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends SherlockFragmentActivity {
 
     private final static String ACCESS = "MobileQueueAccess";
 
@@ -25,7 +24,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ((TextView) findViewById(R.id.title_text)).setText(R.string.app_name);
+        // ((TextView) findViewById(R.id.title_text)).setText(R.string.app_name);
 
         access = getSharedPreferences(ACCESS, Context.MODE_PRIVATE);
         String accessKey = access.getString("ACCESS_KEY", null);
@@ -51,7 +50,7 @@ public class HomeActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.queue_menu, menu);
+        getSupportMenuInflater().inflate(R.menu.queue_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -6,84 +6,60 @@
     android:baselineAligned="false"
     android:orientation="vertical" >
 
-    <LinearLayout style="@style/TitleBar" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-        <TextView style="@style/TitleBarText" />
+        <Button
+            android:id="@+id/home_btn_discqueue"
+            style="@style/HomeButton"
+            android:drawableTop="@drawable/ic_tab_disc"
+            android:onClick="onDiscQueueClick"
+            android:text="@string/btn_discqueue" />
 
-        <ImageView
-            style="@style/TitleBarSeparator"
-            android:contentDescription="@string/title_bar_separator" />
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_search"
-            android:onClick="onSearchClick"
-            android:src="@drawable/ic_title_search" />
+        <Button
+            android:id="@+id/home_btn_instantqueue"
+            style="@style/HomeButton"
+            android:drawableTop="@drawable/ic_tab_instant"
+            android:onClick="onInstantQueueClick"
+            android:text="@string/btn_instantqueue" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:baselineAligned="false"
-        android:orientation="vertical"
-        android:padding="6dp" >
+        android:orientation="horizontal" >
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+        <Button
+            android:id="@+id/home_btn_suggestions"
+            style="@style/HomeButton"
+            android:drawableTop="@drawable/ic_tab_heart"
+            android:onClick="onSuggestionsClick"
+            android:text="@string/btn_suggest" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/home_btn_discqueue"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/ic_tab_disc"
-                android:onClick="onDiscQueueClick"
-                android:text="@string/btn_discqueue" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/home_btn_instantqueue"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/ic_tab_instant"
-                android:onClick="onInstantQueueClick"
-                android:text="@string/btn_instantqueue" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/home_btn_athome"
+            style="@style/HomeButton"
+            android:drawableTop="@drawable/ic_menu_home"
+            android:onClick="onAtHomeClick"
+            android:text="@string/btn_athome" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/home_btn_suggestions"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/ic_tab_heart"
-                android:onClick="onSuggestionsClick"
-                android:text="@string/btn_suggest" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/home_btn_athome"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/ic_menu_home"
-                android:onClick="onAtHomeClick"
-                android:text="@string/btn_athome" />
-
-            <Button
-                android:id="@+id/home_btn_history"
-                style="@style/HomeButton"
-                android:drawableTop="@drawable/ic_menu_agenda"
-                android:onClick="onHistoryClick"
-                android:text="@string/btn_history" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/home_btn_history"
+            style="@style/HomeButton"
+            android:drawableTop="@drawable/ic_menu_agenda"
+            android:onClick="onHistoryClick"
+            android:text="@string/btn_history" />
     </LinearLayout>
 
 </LinearLayout>
