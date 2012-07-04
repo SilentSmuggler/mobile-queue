@@ -6,21 +6,6 @@
     android:baselineAligned="false"
     android:orientation="vertical" >
 
-    <LinearLayout style="@style/TitleBar" >
-
-        <TextView style="@style/TitleBarText" />
-
-        <ImageView
-            style="@style/TitleBarSeparator"
-            android:contentDescription="@string/title_bar_separator" />
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_search"
-            android:onClick="onSearchClick"
-            android:src="@drawable/ic_title_search" />
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"

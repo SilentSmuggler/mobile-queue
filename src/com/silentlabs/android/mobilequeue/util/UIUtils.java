@@ -6,15 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.silentlabs.android.mobilequeue.activity.HomeActivity;
+import com.silentlabs.android.mobilequeue.activity.MainActivity;
 
 public class UIUtils {
 
     /**
-     * Invoke "home" action, returning to {@link HomeActivity}.
+     * Invoke "home" action, returning to {@link MainActivity}.
      */
     public static void goHome(Context context) {
-        final Intent intent = new Intent(context, HomeActivity.class);
+        final Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
     }

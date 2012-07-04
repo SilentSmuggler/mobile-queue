@@ -13,6 +13,18 @@ public class NetflixAccess {
     private static final String ACCESS_TOKEN_URI = "http://api.netflix.com/oauth/access_token";
     private static final String AUTHORIZE_URI = "https://api-user.netflix.com/oauth/login";
 
+    public static String getAccessTokenURL() {
+        return ACCESS_TOKEN_URI;
+    }
+
+    public static String getApplicationName() {
+        return APPLICATION_NAME;
+    }
+
+    public static String getAuthorizeURL() {
+        return AUTHORIZE_URI;
+    }
+
     public static String getConsumerKey() {
         return CONSUMER_KEY;
     }
@@ -21,19 +33,7 @@ public class NetflixAccess {
         return CONSUMER_SECRET;
     }
 
-    public static String getApplicationName() {
-        return APPLICATION_NAME;
-    }
-
     public static String getRequestTokenURL() {
         return REQUEST_TOKEN_URI;
-    }
-
-    public static String getAccessTokenURL() {
-        return ACCESS_TOKEN_URI;
-    }
-
-    public static String getAuthorizeURL() {
-        return AUTHORIZE_URI;
     }
 }

@@ -2,11 +2,11 @@
 package com.silentlabs.android.mobilequeue.activity;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.silentlabs.android.mobilequeue.R;
 
-public class PreferencesActivity extends PreferenceActivity {
+public class PreferencesActivity extends SherlockPreferenceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

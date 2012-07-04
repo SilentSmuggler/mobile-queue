@@ -4,31 +4,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <LinearLayout style="@style/TitleBar" >
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_home"
-            android:onClick="onHomeClick"
-            android:src="@drawable/ic_title_home" />
-
-        <ImageView
-            style="@style/TitleBarSeparator"
-            android:contentDescription="@string/title_bar_separator" />
-
-        <TextView style="@style/TitleBarText" />
-
-        <ImageView
-            style="@style/TitleBarSeparator"
-            android:contentDescription="@string/title_bar_separator" />
-
-        <ImageButton
-            style="@style/TitleBarAction"
-            android:contentDescription="@string/description_search"
-            android:onClick="onSearchClick"
-            android:src="@drawable/ic_title_search" />
-    </LinearLayout>
-
     <include layout="@layout/activity_search_content" />
 
     <LinearLayout

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Variation on the Light theme that turns off the title -->
-    <style name="Theme.NetflixTheme" parent="Theme.Sherlock.Light" />
-
     <style name="HomeButton">
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_width">fill_parent</item>

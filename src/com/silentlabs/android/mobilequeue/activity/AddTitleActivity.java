@@ -1,7 +1,6 @@
 
 package com.silentlabs.android.mobilequeue.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.silentlabs.android.mobilequeue.MobileQueueApplication;
 import com.silentlabs.android.mobilequeue.R;
 import com.silentlabs.android.mobilequeue.parser.NetflixParser;
@@ -33,26 +33,122 @@ import java.net.MalformedURLException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-public class AddTitleActivity extends Activity {
+public class AddTitleActivity extends SherlockActivity {
+
+    private class PostTask extends AsyncTask<String, Void, Void> {
+
+        private final ProgressDialog dialog = new ProgressDialog(AddTitleActivity.this);
+        private String message = null;
+
+        @Override
+        protected Void doInBackground(String... parms) {
+
+            try {
+                NetflixParser postParser = new NetflixParser(parms[0], parms[1]);
+                if (queue.equals("Disc")) {
+                    postParser.postData(parms[2], parms[3], app.getDiscETag(), parms[4], parms[5]);
+                    app.setDiscETag(postParser.getETag());
+
+                } else if (queue.equals("Instant")) {
+                    postParser.postData(parms[2], parms[3], app.getInstantETag(), parms[4],
+                            parms[5]);
+                    app.setInstantETag(postParser.getETag());
+                }
+                message = postParser.getStatusMessage();
+
+            } catch (MalformedURLException e) {
+                message = "MalformedURLException";
+                cancel(true);
+
+            } catch (ParserConfigurationException e) {
+                message = "ParserConfigurationException";
+                cancel(true);
+
+            } catch (SAXException e) {
+                message = "SAXException";
+                cancel(true);
+
+            } catch (IOException e) {
+                message = e.getMessage();
+                cancel(true);
+
+            } catch (NullPointerException e) {
+                message = e.getMessage();
+                cancel(true);
+
+            } catch (RuntimeException e) {
+                message = e.getMessage();
+                cancel(true);
+
+            } catch (Exception e) {
+                message = e.getMessage();
+                cancel(true);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onCancelled() {
+            message = "Operation Cancelled";
+            Toast.makeText(AddTitleActivity.this, message, Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            if (this.dialog.isShowing())
+                this.dialog.dismiss();
+
+            if (message != null)
+                Toast.makeText(AddTitleActivity.this, message, Toast.LENGTH_LONG).show();
+
+            finish();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Updating. Please wait...");
+            this.dialog.setIndeterminate(true);
+            this.dialog.setCancelable(true);
+            this.dialog.setOnCancelListener(new OnCancelListener() {
+
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    cancel(true);
+                }
+            });
+            this.dialog.show();
+        }
+    }
 
     private final static String ACCESS = "MobileQueueAccess";
-
     private MobileQueueApplication app;
     private SharedPreferences access;
     private SharedPreferences settings;
     private String accessKey;
     private String accessSecret;
+
     private String userid;
 
     private String queue;
+
+    private void executePostTask(String postURL, String titleRef, String to, String format) {
+        new PostTask().execute(accessKey, accessSecret, postURL, titleRef, to, format);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_title_layout);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
-                WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND,
+                WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
         app = ((MobileQueueApplication) getApplicationContext());
 
@@ -145,101 +241,5 @@ public class AddTitleActivity extends Activity {
                 executePostTask(UrlString, titleRef, position, format);
             }
         });
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-    }
-
-    private void executePostTask(String postURL, String titleRef, String to, String format) {
-        new PostTask().execute(accessKey, accessSecret, postURL, titleRef, to, format);
-    }
-
-    private class PostTask extends AsyncTask<String, Void, Void> {
-
-        private final ProgressDialog dialog = new ProgressDialog(AddTitleActivity.this);
-        private String message = null;
-
-        @Override
-        protected void onPreExecute() {
-            this.dialog.setMessage("Updating. Please wait...");
-            this.dialog.setIndeterminate(true);
-            this.dialog.setCancelable(true);
-            this.dialog.setOnCancelListener(new OnCancelListener() {
-
-                @Override
-                public void onCancel(DialogInterface dialog) {
-                    cancel(true);
-                }
-            });
-            this.dialog.show();
-        }
-
-        @Override
-        protected Void doInBackground(String... parms) {
-
-            try {
-                NetflixParser postParser = new NetflixParser(parms[0], parms[1]);
-                if (queue.equals("Disc")) {
-                    postParser.postData(parms[2], parms[3], app.getDiscETag(), parms[4], parms[5]);
-                    app.setDiscETag(postParser.getETag());
-
-                } else if (queue.equals("Instant")) {
-                    postParser.postData(parms[2], parms[3], app.getInstantETag(), parms[4],
-                            parms[5]);
-                    app.setInstantETag(postParser.getETag());
-                }
-                message = postParser.getStatusMessage();
-
-            } catch (MalformedURLException e) {
-                message = "MalformedURLException";
-                cancel(true);
-
-            } catch (ParserConfigurationException e) {
-                message = "ParserConfigurationException";
-                cancel(true);
-
-            } catch (SAXException e) {
-                message = "SAXException";
-                cancel(true);
-
-            } catch (IOException e) {
-                message = e.getMessage();
-                cancel(true);
-
-            } catch (NullPointerException e) {
-                message = e.getMessage();
-                cancel(true);
-
-            } catch (RuntimeException e) {
-                message = e.getMessage();
-                cancel(true);
-
-            } catch (Exception e) {
-                message = e.getMessage();
-                cancel(true);
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onCancelled() {
-            message = "Operation Cancelled";
-            Toast.makeText(AddTitleActivity.this, message, Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-
-            if (this.dialog.isShowing())
-                this.dialog.dismiss();
-
-            if (message != null)
-                Toast.makeText(AddTitleActivity.this, message, Toast.LENGTH_LONG).show();
-
-            finish();
-        }
     }
 }

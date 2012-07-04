@@ -13,5 +13,6 @@
 
     <color name="title_separator">#40ffffff</color>
     <color name="dragndrop_background">#ff0000</color>
+    <color name="netflix_red">#FF0006</color>
 
 </resources>

@@ -1,7 +1,6 @@
 
 package com.silentlabs.android.mobilequeue.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.silentlabs.android.mobilequeue.R;
 import com.silentlabs.android.mobilequeue.classes.User;
 import com.silentlabs.android.mobilequeue.parser.NetflixParser;
@@ -29,64 +29,13 @@ import java.net.MalformedURLException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-public class DisplayProfileActivity extends Activity {
-
-    private final static String ACCESS = "MobileQueueAccess";
-
-    private SharedPreferences access;
-    private String accessKey;
-    private String accessSecret;
-    private String userid;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
-                WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-
-        setContentView(R.layout.profile_layout);
-
-        access = getSharedPreferences(ACCESS, Context.MODE_PRIVATE);
-        accessKey = access.getString("ACCESS_KEY", null);
-        accessSecret = access.getString("ACCESS_SECRET", null);
-        userid = access.getString("USER_ID", null);
-
-        TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
-        brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
-
-        executeProfileTask(getString(R.string.user_api_URL) + userid);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-    }
-
-    private void executeProfileTask(String userURL) {
-        new ProfileTask().execute(accessKey, accessSecret, userURL);
-    }
+public class DisplayProfileActivity extends SherlockActivity {
 
     private class ProfileTask extends AsyncTask<String, Void, Void> {
 
         private final ProgressDialog dialog = new ProgressDialog(DisplayProfileActivity.this);
         private String message = null;
         private User user;
-
-        @Override
-        protected void onPreExecute() {
-            this.dialog.setMessage("Retrieving. Please wait...");
-            this.dialog.setIndeterminate(true);
-            this.dialog.setCancelable(true);
-            this.dialog.setOnCancelListener(new OnCancelListener() {
-
-                @Override
-                public void onCancel(DialogInterface dialog) {
-                    cancel(true);
-                }
-            });
-            this.dialog.show();
-        }
 
         @Override
         protected Void doInBackground(String... parms) {
@@ -176,5 +125,56 @@ public class DisplayProfileActivity extends Activity {
             if (message != null)
                 Toast.makeText(DisplayProfileActivity.this, message, Toast.LENGTH_LONG).show();
         }
+
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Retrieving. Please wait...");
+            this.dialog.setIndeterminate(true);
+            this.dialog.setCancelable(true);
+            this.dialog.setOnCancelListener(new OnCancelListener() {
+
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    cancel(true);
+                }
+            });
+            this.dialog.show();
+        }
+    }
+
+    private final static String ACCESS = "MobileQueueAccess";
+    private SharedPreferences access;
+    private String accessKey;
+    private String accessSecret;
+
+    private String userid;
+
+    private void executeProfileTask(String userURL) {
+        new ProfileTask().execute(accessKey, accessSecret, userURL);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND,
+                WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+
+        setContentView(R.layout.profile_layout);
+
+        access = getSharedPreferences(ACCESS, Context.MODE_PRIVATE);
+        accessKey = access.getString("ACCESS_KEY", null);
+        accessSecret = access.getString("ACCESS_SECRET", null);
+        userid = access.getString("USER_ID", null);
+
+        TextView brandingTest = (TextView) findViewById(R.id.BrandingText);
+        brandingTest.setMovementMethod(LinkMovementMethod.getInstance());
+
+        executeProfileTask(getString(R.string.user_api_URL) + userid);
     }
 }
