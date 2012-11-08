@@ -9,8 +9,8 @@ public class NetflixAccess {
     private static final String CONSUMER_SECRET = "CONSUMER_SECRET";
     private static final String APPLICATION_NAME = "Mobile+Queue";
 
-    private static final String REQUEST_TOKEN_URI = "http://api.netflix.com/oauth/request_token";
-    private static final String ACCESS_TOKEN_URI = "http://api.netflix.com/oauth/access_token";
+    private static final String REQUEST_TOKEN_URI = "http://api-public.netflix.com/oauth/request_token";
+    private static final String ACCESS_TOKEN_URI = "http://api-public.netflix.com/oauth/access_token";
     private static final String AUTHORIZE_URI = "https://api-user.netflix.com/oauth/login";
 
     public static String getConsumerKey() {

@@ -32,8 +32,8 @@
     <string name="similar">Similar</string>
 
     <!-- URLs -->
-    <string name="user_api_URL">http://api.netflix.com/users/</string>
-    <string name="catalog_titles_api_URL">http://api.netflix.com/catalog/titles</string>
+    <string name="user_api_URL">http://api-public.netflix.com/users/</string>
+    <string name="catalog_titles_api_URL">http://api-public.netflix.com/catalog/titles</string>
     <string name="disc_queueURL">/queues/disc</string>
     <string name="instant_queueURL">/queues/instant</string>
     <string name="recommendations_URL">/recommendations</string>

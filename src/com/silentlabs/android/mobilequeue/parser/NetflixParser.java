@@ -273,19 +273,19 @@ public class NetflixParser extends DefaultHandler {
         else if (name.trim().equals("category")) {
             for (int i = 0; i < atts.getLength(); i++) {
 
-                if (atts.getValue(i).trim().equals("http://api.netflix.com/categories/genres")) {
+                if (atts.getValue(i).trim().equals("http://api-public.netflix.com/categories/genres")) {
                     this.item.addGenre(atts.getValue("term"));
 
                 } else if (atts.getValue(i).trim()
-                        .equals("http://api.netflix.com/categories/mpaa_ratings")) {
+                        .equals("http://api-public.netflix.com/categories/mpaa_ratings")) {
                     this.item.setMpaaRatings(atts.getValue("term"));
 
                 } else if (atts.getValue(i).trim()
-                        .equals("http://api.netflix.com/categories/tv_ratings")) {
+                        .equals("http://api-public.netflix.com/categories/tv_ratings")) {
                     this.item.setTvRatings(atts.getValue("term"));
 
                 } else if (atts.getValue(i).trim()
-                        .equals("http://api.netflix.com/categories/title_formats")) {
+                        .equals("http://api-public.netflix.com/categories/title_formats")) {
                     if (item != null) {
                         String media = atts.getValue("term");
                         this.item.addFormats(media);
@@ -329,11 +329,11 @@ public class NetflixParser extends DefaultHandler {
                     }
 
                 } else if (atts.getValue(i).trim()
-                        .equals("http://api.netflix.com/categories/queue_availability")) {
+                        .equals("http://api-public.netflix.com/categories/queue_availability")) {
                     this.item.setAvailability(atts.getValue("term"));
 
                 } else if (atts.getValue(i).trim()
-                        .equals("http://api.netflix.com/categories/rental_states")) {
+                        .equals("http://api-public.netflix.com/categories/rental_states")) {
                     this.item.setRentalStates(atts.getValue("term"));
                 }
             }
